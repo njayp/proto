@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package proto;
+
+option go_package = "proto/generated";
+
+service Service { rpc ChunkStream(stream ChunkMessage) returns (AkMessage); }
+
+message ChunkMessage { bytes chunk = 1; }
+
+message AkMessage { string ak = 1; }
